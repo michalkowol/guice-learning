@@ -1,8 +1,8 @@
-name := "guice-test"
+name := "guice-learning"
 
 version := "1.0"
 
-scalaVersion := "2.10.3"
+scalaVersion := "2.10.4"
 
 fork := true
 
@@ -10,20 +10,28 @@ scalacOptions ++= Seq("-unchecked", "-deprecation", "-feature")
 
 seq(com.github.retronym.SbtOneJar.oneJarSettings: _*)
 
-// UTILS
+org.scalastyle.sbt.ScalastylePlugin.Settings
 
-libraryDependencies += "com.google.guava" % "guava" % "15.0"
+// utils
 
-libraryDependencies += "com.google.code.findbugs" % "jsr305" % "2.0.2"
+libraryDependencies += "com.google.guava" % "guava" % "16.0.1"
 
-// LOG
+libraryDependencies += "com.google.code.findbugs" % "jsr305" % "2.0.3"
 
-libraryDependencies += "org.slf4j" % "slf4j-api" % "1.7.5"
+// log
 
-libraryDependencies += "ch.qos.logback" % "logback-classic" % "1.0.13"
+libraryDependencies += "org.slf4j" % "slf4j-api" % "1.7.6"
 
-libraryDependencies += "com.typesafe" %% "scalalogging-slf4j" % "1.0.1"
+libraryDependencies += "ch.qos.logback" % "logback-classic" % "1.1.1"
 
-// GUICE
+libraryDependencies += "com.typesafe" %% "scalalogging-slf4j" % "1.1.0"
+
+// test
+
+libraryDependencies += "org.scalatest" %% "scalatest" % "2.1.2" % "test"
+
+libraryDependencies += "org.mockito" % "mockito-all" % "1.9.5" % "test"
+
+// guice
 
 libraryDependencies += "net.codingwell" %% "scala-guice" % "4.0.0-beta"
